@@ -3,6 +3,9 @@
 #pragma once
 
 #include "Tank.h"
+#include "Runtime/Engine/Classes/Engine/World.h"
+//#include "Engine/World.h"
+#include "GameFramework/PlayerController.h"
 #include "CoreMinimal.h"
 #include "AIController.h"
 #include "TankAIController.generated.h"
@@ -18,4 +21,7 @@ class WOT_API ATankAIController : public AAIController
 public:
 	ATank* GetControlledTank() const;
 	void BeginPlay() override;
+
+private:
+	ATank* GetPlayerTank() const;
 };
