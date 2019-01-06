@@ -8,8 +8,16 @@ void ATankAIController::BeginPlay()
 	Super::BeginPlay();
 
 	auto PlayerTank = GetPlayerTank();
-	if (!PlayerTank) { UE_LOG(LogTemp, Warning, TEXT("AI does not possess a tank")) }
-	else { UE_LOG(LogTemp, Warning, TEXT("AI possesses %s"), *(PlayerTank->GetName())) }
+	if (!PlayerTank) { UE_LOG(LogTemp, Warning, TEXT("AI did not find a player")) }
+	else { UE_LOG(LogTemp, Warning, TEXT("AI found the player %s"), *(PlayerTank->GetName())) }
+}
+
+void ATankAIController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	if (GetPlayerTank()) {
+		GetControlledTank()->AimAt(GetPlayerTank()->GetActorLocation());
+	}
 }
 
 ATank* ATankAIController::GetPlayerTank() const

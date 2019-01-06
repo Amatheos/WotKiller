@@ -7,6 +7,10 @@ public class Wot : ModuleRules
 	public Wot(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+		
+		MinFilesUsingPrecompiledHeaderOverride = 1;
+		
+        bFasterWithoutUnity = true;
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
 
