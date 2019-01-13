@@ -2,16 +2,14 @@
 
 #pragma once
 
-#include "Tank.h"
 #include "CoreMinimal.h"
 //#include "Engine/World.h"
 #include "Runtime/Engine/Classes/Engine/World.h"
 #include "GameFramework/PlayerController.h"
 #include "TankPlayerController.generated.h"
 
-/**
- * 
- */
+class ATank;
+
 UCLASS()
 class WOT_API ATankPlayerController : public APlayerController
 {

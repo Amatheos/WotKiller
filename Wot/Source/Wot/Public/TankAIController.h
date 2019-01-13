@@ -2,7 +2,6 @@
 
 #pragma once
 
-#include "Tank.h"
 #include "Runtime/Engine/Classes/Engine/World.h"
 //#include "Engine/World.h"
 #include "GameFramework/PlayerController.h"
@@ -10,9 +9,8 @@
 #include "AIController.h"
 #include "TankAIController.generated.h"
 
-/**
- * 
- */
+class ATank;
+
 UCLASS()
 class WOT_API ATankAIController : public AAIController
 {
