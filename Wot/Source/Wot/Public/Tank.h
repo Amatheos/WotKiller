@@ -19,7 +19,7 @@ public:
 	ATank();
 
 protected:
-	// Called when the game starts or when spawned
+	// Called when the game starts or when spawned 
 	virtual void BeginPlay() override;
 
 	UTankAimingComponent* TankAimingComponent = nullptr;
@@ -33,6 +33,12 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
+
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	void SetTurretReference(UTankTurret* TurretToSet);
+
+	UFUNCTION(BlueprintCallable, Category = Firing)
+	void Fire();
 
 private:
 	UPROPERTY(EditAnywhere, Category = Firing)
